@@ -10,7 +10,7 @@ GO
 CREATE TABLE Clinica (
 	IdClinica            INT PRIMARY KEY IDENTITY,
 	NomeFantasia         VARCHAR (255) NOT NULL UNIQUE,
-	CNPJ		         CHAR (14) NOT NULL UNIQUE,
+	CNPJ		         VARCHAR (50) NOT NULL UNIQUE,
 	RazaoSocial			 VARCHAR (255) NOT NULL UNIQUE,
 	EnderecoClinica		 VARCHAR (255) NOT NULL,
 	HorarioFuncionamento VARCHAR (255) NOT NULL
@@ -49,9 +49,9 @@ GO
 CREATE TABLE Paciente (
 	IdPaciente       INT PRIMARY KEY IDENTITY,
 	RG				 VARCHAR (15) NOT NULL UNIQUE,
-	CPF				 INT NOT NULL UNIQUE,
-	Telefone	     INT,
-	DataNascimento   DATETIME2,
+	CPF				 VARCHAR (50) NOT NULL UNIQUE,
+	Telefone	     VARCHAR (50),
+	DataNascimento   DATE,
 	EnderecoPaciente VARCHAR (255),
 
 	IdUsuario		 INT FOREIGN KEY REFERENCES Usuario (IdUsuario)
