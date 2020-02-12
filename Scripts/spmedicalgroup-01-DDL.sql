@@ -1,12 +1,12 @@
---criar o banco de dados com o nome do projeto
+--CRIAR O BANCO DE DADOS COM O NOME DO PROJETO
 CREATE DATABASE spmedicalgroup_manha;
 GO
 
---define o banco de dados que será utilizado
+--DEFINIR O BANCO DE DADOS QUE SERÁ UTILIZADO
 USE spmedicalgroup_manha;
 GO
 
---criar as tabelas do banco de dados
+--CRIAR AS TABELAS DO BANCO DE DADOS
 CREATE TABLE Clinica (
 	IdClinica            INT PRIMARY KEY IDENTITY,
 	NomeFantasia         VARCHAR (255) NOT NULL UNIQUE,
@@ -64,5 +64,16 @@ CREATE TABLE Medico (
 
 	IdUsuario	    INT FOREIGN KEY REFERENCES Usuario (IdUsuario),
 	IdEspecialidade INT FOREIGN KEY REFERENCES Especialidade (IdEspecialidade)
+);
+GO
+
+CREATE TABLE Consulta (
+	IdConsulta   INT PRIMARY KEY IDENTITY,
+	Descricao    VARCHAR (255),
+	DataConsulta DATETIME2,
+
+	IdMedico	 INT FOREIGN KEY REFERENCES Medico (IdMedico),
+	IdPaciente   INT FOREIGN KEY REFERENCES Paciente (IdPaciente),
+	IdSituacao   INT FOREIGN KEY REFERENCES Situacao (IdSituacao)
 );
 GO
