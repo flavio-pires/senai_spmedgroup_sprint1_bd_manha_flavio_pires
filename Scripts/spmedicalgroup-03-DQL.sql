@@ -3,9 +3,12 @@ USE spmedicalgroup_manha;
 GO
 
 --DQL
-SELECT * FROM Clinica;
 SELECT * FROM TipoUsuario;
 SELECT * FROM Especialidade;
+SELECT * FROM Estado;
+SELECT * FROM Cidade;
+SELECT * FROM Endereco;
+SELECT * FROM Clinica;
 SELECT * FROM Usuario;
 SELECT * FROM Paciente;
 SELECT * FROM Medico;
